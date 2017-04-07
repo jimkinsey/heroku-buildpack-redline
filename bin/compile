@@ -46,9 +46,9 @@ fi
 
 echo "-----> Installing Redline"
 REDLINE_VERSION="ce4112c"
-REDLINE_URL="https://github.com/redline-smalltalk/redline-smalltalk.github.com/raw/master/assets/redline-deploy.zip"
+REDLINE_URL="https://s3.eu-central-1.amazonaws.com/jimkinsey/redline/redline-deploy.zip"
 cd $BUILD_DIR
 (wget $REDLINE_URL) || error "Failed to download $REDLINE_VERSION"
-unzip redline-deploy.zip -d redline-deploy
+unzip redline-deploy.zip
 mv redline-deploy .redline
 
