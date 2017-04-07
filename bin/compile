@@ -46,9 +46,10 @@ fi
 
 echo "-----> Installing Redline"
 REDLINE_VERSION="ce4112c"
-REDLINE_URL="https://heroku-buildpack-redline.s3.amazonaws.com/redline-$REDLINE_VERSION.tgz"
+REDLINE_URL="https://github.com/redline-smalltalk/redline-smalltalk.github.com/raw/master/assets/redline-deploy.zip"
 cd $BUILD_DIR
-(curl --silent --max-time 60 --location $REDLINE_URL --fail | tar -x) || error "Failed to download $REDLINE_VERSION"
+(wget $REDLINE_URL) || error "Failed to download $REDLINE_VERSION"
+unzip redline-deploy.zip /d redline-deploy
 mv redline-deploy .redline
 rm .redline/*.bat
 
