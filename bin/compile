@@ -20,7 +20,7 @@ if [ -f ${CACHE_DIR}/system.properties ] && [ ! -f ${BUILD_DIR}/system.propertie
 fi
 
 if [ ! -d $CACHE_DIR ]; then
-  LOGGER_FLAGS="$LOGGER_FLAGS new_java_app"
+  LOGGER_FLAGS="${LOGGER_FLAGS:=} new_java_app"
   logger -p user.notice -t "slugc[$$]" "language_pack_java new_java_app"
   if [ ! -f ${BUILD_DIR}/system.properties ]; then
     echo "java.runtime.version=1.6" > ${BUILD_DIR}/system.properties;
