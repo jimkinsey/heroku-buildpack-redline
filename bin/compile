@@ -51,5 +51,4 @@ cd $BUILD_DIR
 (wget $REDLINE_URL) || error "Failed to download $REDLINE_VERSION"
 unzip redline-deploy.zip -d redline-deploy
 mv redline-deploy .redline
-rm .redline/*.bat
 
